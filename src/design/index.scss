@@ -1,0 +1,14 @@
+$brandColor: #34B4EF;
+
+$bcgColor: #f0f2f5;
+$mainTextColor: #333333;
+
+@mixin toFlex($col: center, $row: center) {
+  display: flex;
+  align-items: $col;
+  justify-content: $row;
+}
+
+@mixin toContainer {
+  background-color: #ffffff;
+}

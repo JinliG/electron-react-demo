@@ -1,0 +1,27 @@
+@import '../../design/index.scss';
+
+.custom-layout {
+  .sider {
+    &-line {
+      height: 32px;
+      margin: 16px;
+      background-color: $bcgColor;
+    }
+  }
+
+  &-header.ant-layout-header {
+    background-color: #ffffff;
+  }
+
+  &-content {
+    overflow-y: auto;
+    height: calc(100vh - 64px);
+  }
+
+  &-main {
+    margin: 24px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello Electron React!</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script src="//at.alicdn.com/t/font_1299166_znb2z8tnh7h.js"></script>
+<script>
+  window.electron.ipcRenderer.once('ipc-example', (arg) => {
+    // eslint-disable-next-line no-console
+    console.log(arg);
+  });
+
+  window.electron.ipcRenderer.myPing();
+
+</script>
+<style type="text/css">
+  .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    color: #89909A;
+  }
+
+</style>
+
+</html>

@@ -1,0 +1,7 @@
+@import '../../design/index.scss';
+
+.home-container {
+  @include toContainer();
+
+  color: $mainTextColor
+}
