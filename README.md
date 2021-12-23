@@ -2,10 +2,6 @@
 
 <br>
 
-<img src="./.erb/img/erb-banner.svg" width="100%" />
-
-<br>
-
 ## Install
 
 Clone the repo and install dependencies:
