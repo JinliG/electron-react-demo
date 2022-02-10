@@ -1,4 +1,4 @@
-import { divide, map, noop } from 'lodash';
+import { map } from 'lodash';
 import { lazy, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 import Layout from '../modules/layout/index';
