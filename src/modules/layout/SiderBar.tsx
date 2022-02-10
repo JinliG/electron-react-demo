@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Menu, Layout } from 'antd';
 import { useRecoilState } from 'recoil';
-import { menuState } from 'store';
+import { menuState, menuOpenKeysState } from 'store';
 import { map } from 'lodash';
 import './index.scss';
 
@@ -10,19 +10,23 @@ const { SubMenu, Item: MenuItem } = Menu;
 
 function SideBar(props: any) {
   const { history, location } = props;
-  const { selectedSideMenu, openSideMenu } = location?.state || {};
+  const { selectedSideMenu } = location?.state || {};
 
   const [menus, setMenus] = useRecoilState(menuState);
+  const [menuOpenKeys, setMenuOpenKeys] = useRecoilState(menuOpenKeysState);
 
   const selectedKeys = selectedSideMenu ? [selectedSideMenu] : [];
-  const openKeys = openSideMenu ? [openSideMenu] : [];
+
   return (
     <Sider className="sider" theme="light" collapsible>
       <div className="sider-line" />
       <Menu
         mode="inline"
         defaultSelectedKeys={selectedKeys}
-        defaultOpenKeys={openKeys}
+        defaultOpenKeys={menuOpenKeys}
+        onOpenChange={(openKeys) => {
+          setMenuOpenKeys(openKeys);
+        }}
       >
         {map(menus, (subMenu, index) => {
           const { key, Icon, title, children } = subMenu;
@@ -37,7 +41,6 @@ function SideBar(props: any) {
                       if (path) {
                         history.push(path, {
                           selectedSideMenu: itemKey,
-                          openSideMenu: key,
                         });
                       }
                     }}

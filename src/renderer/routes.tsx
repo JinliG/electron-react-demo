@@ -29,6 +29,10 @@ const RoutesConfig = [
             path: '/demo',
             component: lazy(() => import('../modules/home/DemoComp')),
           },
+          {
+            path: '/demo2',
+            component: lazy(() => import('../modules/home/DemoComp2')),
+          },
         ],
       },
     ],

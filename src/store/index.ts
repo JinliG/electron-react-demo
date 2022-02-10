@@ -20,7 +20,7 @@ export const isLoginState = selector({
   },
 });
 
-export const menuState = atom<any>({
+export const menuState = atom<any[]>({
   key: 'menuState',
   default: [
     {
@@ -53,7 +53,7 @@ export const menuState = atom<any>({
         {
           title: 'Option 4',
           key: 'Option 4',
-          path: '/home/demo',
+          path: '/home/demo2',
         },
       ],
     },
@@ -65,11 +65,16 @@ export const menuState = atom<any>({
         {
           title: 'Option 5',
           key: 'Option 5',
-          path: '/home/demo',
+          path: '/home/demo2',
         },
       ],
     },
   ],
+});
+
+export const menuOpenKeysState = atom<string[]>({
+  key: 'menuOpenKeysState',
+  default: [],
 });
 
 // export const userData = selector({
